@@ -1,0 +1,30 @@
+.header {
+    padding: 30px 100px;
+}
+
+.header_inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header_img {
+    width: 170px;
+}
+
+.header_list {
+    display: flex;
+    gap: 0 60px;
+}
+
+.header_link {
+    display: block;
+    color: $dark;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 34.22px;
+
+    &:active,
+    &:focus {
+        border-bottom: 2px solid black;
+    }
+}

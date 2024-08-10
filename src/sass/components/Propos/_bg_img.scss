@@ -1,0 +1,15 @@
+.propos {
+    padding: 0 100px;
+}
+
+.propos_img {
+    width: 100%;
+    color: $white;
+    height: 223px;
+    background-image: url(../assets/image/Section_propos.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 25px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}

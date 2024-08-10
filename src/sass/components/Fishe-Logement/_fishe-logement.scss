@@ -1,0 +1,220 @@
+.container-logement {
+    max-width: 1110px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+}
+
+#logement {
+    position: relative;
+}
+
+.carrousel-wrapper {
+    padding: 0 50px;
+}
+
+.carrousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.logement_carrousel {
+    width: 100%;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.arrow-left {
+    left: 10px;
+}
+
+.arrow-right {
+    right: 10px;
+}
+
+.logement-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logement-menu {
+    margin-left: 55px;
+    margin-bottom: 246px;
+}
+
+.logement-items_title {
+    color: $red;
+    margin-top: -45px;
+}
+
+.logement-items_text {
+    font-family: $font-main;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25.67px;
+    margin-top: -45px;
+}
+
+.logement-other {
+    display: flex;
+    gap: 0 10px;
+    margin: 24px 0;
+}
+
+.logement-bg {
+    background-color: $red;
+    padding: 3px 37px 2px 36px;
+    border-radius: 10px;
+    color: $white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.logement-bar_text {
+    color: $white;
+    font-family: $font-main;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25.67px;
+}
+
+.logement-bar {
+    position: relative;
+    background-color: $red;
+    width: 44%;
+    border-radius: 10px;
+    padding: 10px 0 10px 10px;
+}
+
+.icon-container-logement {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 5px;
+}
+
+.logement-description-content {
+    position: absolute;
+    max-width: 44%;
+    padding: 10px;
+    font-family: "Montserrat", sans-serif;
+    color: #000000;
+    font-size: 20px;
+    padding: 10px;
+  }
+
+.v-icon-logement {
+    position: absolute;
+    color: $white;
+    width: 33px;
+    height: 18px;
+    cursor: pointer;
+    top: 40px;
+    right: 13px;
+    transition: transform 0.3s ease;
+
+    display: flex;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 97%;
+        background-color: $white;
+        top: -26px;
+
+    }
+
+    &:before {
+        left: 12px;
+        transform: rotate(45deg);
+    }
+
+    &:after {
+        right: 8px;
+        transform: rotate(-45deg);
+    }
+
+    &.open {
+        transform: rotate(90deg);
+    }
+}
+
+// logement bloc droite
+
+.logement-prenom-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 20%;
+}
+
+.logement-text {
+    display: flex;
+    font-family: $font-main;
+    color: $red;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25.67px;
+    text-align: right;
+}
+
+.logement-prenom {
+    display: flex;
+    align-items: center;
+    margin-top: 17px;
+    gap: 0 5px;
+}
+
+.logement-prenom img {
+    margin-right: 60px;
+}
+
+.logement-rating {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    top: 67px;
+    right: 13px;
+}
+
+.icon-rating {
+    color: $red;
+    font-size: 21px;
+}
+
+.neutral-star {
+    position: relative;
+    color: $gray-star;
+    font-size: 21px;
+
+    &:before {
+        content: '\f005';
+        /* Unicode для звезды */
+    }
+}
+
+.logement-bar-droite {
+    position: relative;
+    background-color: $red;
+    width: 211%;
+    border-radius: 10px;
+    padding: 10px 0 10px 10px;
+    right: 289px;
+    top: 96px;
+}

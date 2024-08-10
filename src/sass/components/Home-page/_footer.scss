@@ -1,0 +1,17 @@
+.footer {
+    padding: 60px 0 30px 0;
+    background-color: $dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer svg {
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.footer_text {
+ color: $white;
+}

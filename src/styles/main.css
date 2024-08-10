@@ -1,0 +1,529 @@
+@charset "UTF-8";
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 68.45px;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 51.34px;
+}
+
+h5 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 34.22px;
+}
+
+h6 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25.67px;
+}
+
+.Titre-de-la-location {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25.67px;
+}
+
+/* Reset and base styles  */
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Links */
+a, a:link, a:visited {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+i {
+  display: block;
+  cursor: pointer;
+}
+
+ul li,
+ol li {
+  list-style-type: none;
+}
+
+button {
+  display: block;
+  border: none;
+  color: inherit;
+  background-color: transparent;
+  background-color: inherit;
+  transition: 3s;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+}
+
+/* Common */
+aside, nav, footer, header, section, main {
+  display: block;
+}
+
+.header {
+  padding: 30px 100px;
+}
+
+.header_inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_img {
+  width: 170px;
+}
+
+.header_list {
+  display: flex;
+  gap: 0 60px;
+}
+
+.header_link {
+  display: block;
+  color: #000000;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 34.22px;
+}
+.header_link:active, .header_link:focus {
+  border-bottom: 2px solid black;
+}
+
+.Titre-de-la-location {
+  max-width: 1380px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.title-chez-vous {
+  width: 100%;
+  color: #FFFFFF;
+  height: 223px;
+  background-image: url(../assets/image/header_img2.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}
+
+.title-chez-vous h1 {
+  text-align: center;
+  padding-top: 75px;
+}
+
+.location_blocks {
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location_wrapper {
+  background-color: #F6F6F6;
+  padding: 45px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 50px 0;
+  width: 100%;
+}
+
+.location-inner {
+  display: flex;
+  justify-content: space-around;
+  gap: 0 60px;
+  width: 90%;
+}
+
+.location_text {
+  color: #FFFFFF;
+  padding: 20px 20px;
+  width: 175px;
+}
+
+.location_block {
+  width: 340px;
+  height: 340px;
+  border-radius: 25px;
+  background-color: #FF6060;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.footer {
+  padding: 60px 0 30px 0;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer svg {
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.footer_text {
+  color: #FFFFFF;
+}
+
+.propos {
+  padding: 0 100px;
+}
+
+.propos_img {
+  width: 100%;
+  color: #FFFFFF;
+  height: 223px;
+  background-image: url(../assets/image/Section_propos.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}
+
+.propos-menu {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 38px 0;
+  gap: 30px 0;
+  margin-bottom: 250px;
+}
+
+.propos_block h5 {
+  padding: 10px 0 8px 15px;
+}
+
+.propos_block {
+  position: relative;
+  background-color: #FF6060; /* Красный фон для блока */
+  color: #FFFFFF; /* Цвет текста белый */
+  width: 82%;
+  border-radius: 5px;
+  overflow: hidden; /* Скрывает содержимое за пределами блока */
+  transition: margin-bottom 0.3s ease;
+}
+.propos_block .content-container {
+  position: relative;
+  background-color: #FFFFFF; /* Белый фон для раскрывающегося содержимого */
+  max-height: 0; /* Начальная высота для скрытия содержимого */
+  overflow: hidden; /* Скрывает переполнение */
+  transition: max-height 0.4s ease-in, opacity 0.4s ease-in, transform 0.4s ease-in;
+}
+.propos_block .content-container.open {
+  max-height: 1000px; /* Достаточно большая высота для содержимого */
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.propos_block .content {
+  font-family: "Montserrat", sans-serif; /* Замените на ваш шрифт */
+  color: #000000; /* Цвет текста */
+  font-size: 22px;
+  padding: 10px; /* Отступы */
+  opacity: 0; /* Начальная непрозрачность */
+  transform: translateY(-20px); /* Начальное смещение вверх */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Анимации для свойств */
+}
+.propos_block .content.visible {
+  opacity: 1; /* Текст становится видимым */
+  transform: translateY(0); /* Текст смещается на своё место */
+}
+.propos_block .icon-container {
+  position: absolute;
+  top: 17px;
+  right: 20px;
+  cursor: pointer;
+}
+.propos_block .icon-container .v-icon {
+  width: 28px;
+  height: 17px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.propos_block .icon-container .v-icon:before, .propos_block .icon-container .v-icon:after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: #FFFFFF;
+  top: 0;
+}
+.propos_block .icon-container .v-icon:before {
+  left: 14px;
+  transform: rotate(45deg);
+}
+.propos_block .icon-container .v-icon:after {
+  right: 1px;
+  transform: rotate(-45deg);
+}
+.propos_block .icon-container.open .v-icon {
+  transform: rotate(-180deg);
+}
+
+.error {
+  margin: 140px 0;
+  text-align: center;
+}
+
+.error_img {
+  margin: 0 auto;
+  width: 50%;
+  height: 260px;
+}
+
+.error_title {
+  color: #FF6060;
+  margin: 140px 0;
+  width: 100%;
+}
+
+.error_text {
+  display: inline-block;
+  border-bottom: 1px solid black;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25.67px;
+}
+
+.container-logement {
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+}
+
+#logement {
+  position: relative;
+}
+
+.carrousel-wrapper {
+  padding: 0 50px;
+}
+
+.carrousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.logement_carrousel {
+  width: 100%;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.arrow-left {
+  left: 10px;
+}
+
+.arrow-right {
+  right: 10px;
+}
+
+.logement-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logement-menu {
+  margin-left: 55px;
+  margin-bottom: 246px;
+}
+
+.logement-items_title {
+  color: #FF6060;
+  margin-top: -45px;
+}
+
+.logement-items_text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25.67px;
+  margin-top: -45px;
+}
+
+.logement-other {
+  display: flex;
+  gap: 0 10px;
+  margin: 24px 0;
+}
+
+.logement-bg {
+  background-color: #FF6060;
+  padding: 3px 37px 2px 36px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.logement-bar_text {
+  color: #FFFFFF;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25.67px;
+}
+
+.logement-bar {
+  position: relative;
+  background-color: #FF6060;
+  width: 44%;
+  border-radius: 10px;
+  padding: 10px 0 10px 10px;
+}
+
+.icon-container-logement {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 20px;
+  padding-left: 5px;
+}
+
+.logement-description-content {
+  position: absolute;
+  max-width: 44%;
+  padding: 10px;
+  font-family: "Montserrat", sans-serif;
+  color: #000000;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.v-icon-logement {
+  position: absolute;
+  color: #FFFFFF;
+  width: 33px;
+  height: 18px;
+  cursor: pointer;
+  top: 40px;
+  right: 13px;
+  transition: transform 0.3s ease;
+  display: flex;
+}
+.v-icon-logement:before, .v-icon-logement:after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 97%;
+  background-color: #FFFFFF;
+  top: -26px;
+}
+.v-icon-logement:before {
+  left: 12px;
+  transform: rotate(45deg);
+}
+.v-icon-logement:after {
+  right: 8px;
+  transform: rotate(-45deg);
+}
+.v-icon-logement.open {
+  transform: rotate(90deg);
+}
+
+.logement-prenom-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 20%;
+}
+
+.logement-text {
+  display: flex;
+  font-family: "Montserrat", sans-serif;
+  color: #FF6060;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25.67px;
+  text-align: right;
+}
+
+.logement-prenom {
+  display: flex;
+  align-items: center;
+  margin-top: 17px;
+  gap: 0 5px;
+}
+
+.logement-prenom img {
+  margin-right: 60px;
+}
+
+.logement-rating {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  top: 67px;
+  right: 13px;
+}
+
+.icon-rating {
+  color: #FF6060;
+  font-size: 21px;
+}
+
+.neutral-star {
+  position: relative;
+  color: #E3E3E3;
+  font-size: 21px;
+}
+.neutral-star:before {
+  content: "\f005";
+  /* Unicode для звезды */
+}
+
+.logement-bar-droite {
+  position: relative;
+  background-color: #FF6060;
+  width: 211%;
+  border-radius: 10px;
+  padding: 10px 0 10px 10px;
+  right: 289px;
+  top: 96px;
+}
+
+.header-logement {
+  padding: 30px 58px;
+}

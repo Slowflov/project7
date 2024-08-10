@@ -1,0 +1,22 @@
+// Base
+@import '../utilities/base';
+@import '../utilities/vars';
+@import '../utilities/mixin';
+@import '../utilities/reset';
+
+//block main page
+@import '../components/Home-page/header';
+@import '../components/Home-page/title';
+@import '../components/Home-page/location_blocks';
+@import '../components/Home-page/footer';
+
+//block propos
+@import '../components/Propos/bg_img';
+@import '../components/Propos/menu';
+
+//block error
+@import '../components/E404/error';
+
+//block fishe-logement
+@import '../components/Fishe-Logement/fishe-logement';
+@import '../components/Fishe-Logement/header-logement';
