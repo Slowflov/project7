@@ -55,11 +55,10 @@
   .icon-container {
     position: absolute; // Абсолютное позиционирование
     top: 17px; // Отступ от верхнего края
-    right: 20px; // Отступ от правого края
+    right: 24px; // Отступ от правого края
     cursor: pointer;
   
     .v-icon {
-      width: 28px;
       height: 17px;
       position: relative; // Позиционирование иконки относительно контейнера
       transition: transform 0.3s ease;
@@ -75,12 +74,14 @@
       }
   
       &:before {
-        left: 14px;
+        // left: 14px;
+        right: 8px;
         transform: rotate(45deg); // Верхняя линия иконки
       }
   
       &:after {
-        right: 1px;
+        // right: 1px;
+        right: -3px;
         transform: rotate(-45deg); // Нижняя линия иконки
       }
     }

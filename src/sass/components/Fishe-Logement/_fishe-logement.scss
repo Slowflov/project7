@@ -16,15 +16,19 @@
 .carrousel-container {
     position: relative;
     width: 100%;
-    max-width: 960px;
+    max-width: 962px;
     margin: 0 auto;
     padding: 20px 0;
 }
 
 .logement_carrousel {
     width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
+// Основные стили для стрелок
 .arrow {
     position: absolute;
     top: 50%;
@@ -32,15 +36,25 @@
     width: 40px;
     height: 40px;
     cursor: pointer;
-}
+    transition: transform 0.3s ease;
+    overflow: hidden;
+  }
+  
 
-.arrow-left {
+  .arrow:hover {
+    transform: translateY(-50%) scale(1.2);
+  }
+  
+  
+  .arrow-left {
     left: 10px;
-}
+  }
+  
 
-.arrow-right {
+  .arrow-right {
     right: 10px;
-}
+  }
+  
 
 .logement-items {
     display: flex;
@@ -89,6 +103,8 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 25.67px;
+
+    user-select: none;
 }
 
 .logement-bar {
@@ -105,55 +121,89 @@
     align-items: center;
     padding-right: 20px;
     padding-left: 5px;
+
+    user-select: none;
 }
 
-.logement-description-content {
+.logement-description-content,
+.equipments-description-content {
     position: absolute;
-    max-width: 44%;
+    max-width: 43%;
     padding: 10px;
     font-family: "Montserrat", sans-serif;
     color: #000000;
     font-size: 20px;
     padding: 10px;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+  
+    // Если блок открыт, добавляем анимацию и изменяем max-height
+    &.open {
+      max-height: 500px; // Установите значение, соответствующее высоте контента
+      transition: max-height 0.4s ease-out;
+      animation: slideDown 0.4s ease-out forwards;
+    }
   }
 
-.v-icon-logement {
+  @keyframes slideDown {
+    0% {
+      transform: translateY(-28px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+
+  .equipements-list {
+    margin-top: 10px;
+  }
+
+  .equipements-list li {
+    margin-bottom: 4px;
+  }
+
+  .v-icon-logement {
     position: absolute;
     color: $white;
     width: 33px;
     height: 18px;
     cursor: pointer;
-    top: 40px;
-    right: 13px;
-    transition: transform 0.3s ease;
-
+    top: 13px;
+    right: 9px;
+    transition: transform 0.4s ease-out; // Плавный переход для поворота
     display: flex;
-
+    align-items: center; // Центрирование по вертикали
+  
     &:before,
     &:after {
-        content: '';
-        position: absolute;
-        width: 2px;
-        height: 97%;
-        background-color: $white;
-        top: -26px;
-
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 97%;
+      background-color: $white; // Цвет для линий
     }
-
+  
     &:before {
-        left: 12px;
-        transform: rotate(45deg);
+      left: 12px;
+      transform: rotate(45deg); // Верхняя линия
     }
-
+  
     &:after {
-        right: 8px;
-        transform: rotate(-45deg);
+      right: 8px;
+      transform: rotate(-45deg); // Нижняя линия
     }
-
-    &.open {
-        transform: rotate(90deg);
+  
+    // Анимация для поворота иконки
+    &.rotate {
+      transform: rotate(-180deg); // Поворот на 180 градусов
     }
-}
+  }
+  
 
 // logement bloc droite
 

@@ -159,20 +159,43 @@ aside, nav, footer, header, section, main {
   width: 90%;
 }
 
-.location_text {
-  color: #FFFFFF;
-  padding: 20px 20px;
-  width: 175px;
-}
-
 .location_block {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   width: 340px;
   height: 340px;
   border-radius: 25px;
   background-color: #FF6060;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+}
+.location_block:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  border: 4px solid rgba(255, 255, 255, 0.7);
+}
+.location_block:hover .location_text {
+  transform: scale(1.1);
+  font-size: 1 0.8em;
+}
+
+.location_text {
+  color: #FFFFFF;
+  padding: 0 20px 20px 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+.location_image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .footer {
@@ -259,11 +282,10 @@ aside, nav, footer, header, section, main {
 .propos_block .icon-container {
   position: absolute;
   top: 17px;
-  right: 20px;
+  right: 24px;
   cursor: pointer;
 }
 .propos_block .icon-container .v-icon {
-  width: 28px;
   height: 17px;
   position: relative;
   transition: transform 0.3s ease;
@@ -277,11 +299,11 @@ aside, nav, footer, header, section, main {
   top: 0;
 }
 .propos_block .icon-container .v-icon:before {
-  left: 14px;
+  right: 8px;
   transform: rotate(45deg);
 }
 .propos_block .icon-container .v-icon:after {
-  right: 1px;
+  right: -3px;
   transform: rotate(-45deg);
 }
 .propos_block .icon-container.open .v-icon {
@@ -331,13 +353,17 @@ aside, nav, footer, header, section, main {
 .carrousel-container {
   position: relative;
   width: 100%;
-  max-width: 960px;
+  max-width: 962px;
   margin: 0 auto;
   padding: 20px 0;
 }
 
 .logement_carrousel {
   width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
 }
 
 .arrow {
@@ -347,6 +373,12 @@ aside, nav, footer, header, section, main {
   width: 40px;
   height: 40px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.arrow:hover {
+  transform: translateY(-50%) scale(1.2);
 }
 
 .arrow-left {
@@ -404,6 +436,9 @@ aside, nav, footer, header, section, main {
   font-size: 18px;
   font-weight: 700;
   line-height: 25.67px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .logement-bar {
@@ -420,16 +455,47 @@ aside, nav, footer, header, section, main {
   align-items: center;
   padding-right: 20px;
   padding-left: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
-.logement-description-content {
+.logement-description-content,
+.equipments-description-content {
   position: absolute;
-  max-width: 44%;
+  max-width: 43%;
   padding: 10px;
   font-family: "Montserrat", sans-serif;
   color: #000000;
   font-size: 20px;
   padding: 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+.logement-description-content.open,
+.equipments-description-content.open {
+  max-height: 500px;
+  transition: max-height 0.4s ease-out;
+  animation: slideDown 0.4s ease-out forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-28px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.equipements-list {
+  margin-top: 10px;
+}
+
+.equipements-list li {
+  margin-bottom: 4px;
 }
 
 .v-icon-logement {
@@ -438,10 +504,11 @@ aside, nav, footer, header, section, main {
   width: 33px;
   height: 18px;
   cursor: pointer;
-  top: 40px;
-  right: 13px;
-  transition: transform 0.3s ease;
+  top: 13px;
+  right: 9px;
+  transition: transform 0.4s ease-out;
   display: flex;
+  align-items: center;
 }
 .v-icon-logement:before, .v-icon-logement:after {
   content: "";
@@ -449,7 +516,6 @@ aside, nav, footer, header, section, main {
   width: 2px;
   height: 97%;
   background-color: #FFFFFF;
-  top: -26px;
 }
 .v-icon-logement:before {
   left: 12px;
@@ -459,8 +525,8 @@ aside, nav, footer, header, section, main {
   right: 8px;
   transform: rotate(-45deg);
 }
-.v-icon-logement.open {
-  transform: rotate(90deg);
+.v-icon-logement.rotate {
+  transform: rotate(-180deg);
 }
 
 .logement-prenom-rating {

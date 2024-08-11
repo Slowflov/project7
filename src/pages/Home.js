@@ -1,5 +1,6 @@
 // src/pages/Home.js
 import React from 'react';
+import AccommodationList from '../components/AccommodationList';
 import '../styles/main.css';
 
 function Home() {
@@ -9,37 +10,13 @@ function Home() {
         <div className="title-chez-vous">
           <h1>Chez vous, partout et ailleurs</h1>
         </div>
-        <div className="location_blocks">
-          <div className="location_wrapper">
-            <div className="location-inner">
-              <div className="location_block">
-                <p className="location_text">Titre de la location</p>
-              </div>
-              <div className="location_block">
-                <p className="location_text">Titre de la location</p>
-              </div>
-              <div className="location_block">
-                <p className="location_text">Titre de la location</p>
-              </div>
-            </div>
-            <div className="location-inner">
-              <div className="location_block">
-                <p className="location_text">Titre de la location</p>
-              </div>
-              <div className="location_block">
-                <p className="location_text">Titre de la location</p>
-              </div>
-              <div className="location_block">
-                <p className="location_text">Titre de la location</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <AccommodationList />
       </section>
     </main>
   );
 }
 
 export default Home;
+
 
 
