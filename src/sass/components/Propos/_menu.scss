@@ -5,7 +5,12 @@
    align-items: center;
    padding: 38px 0;
    gap: 30px 0;
-   margin-bottom: 250px;
+   margin-bottom: 539px;
+
+   @include tablet {
+    padding: 20px 0;
+    gap: 20px 0;
+ }
 }
 
 .propos_block h5 {
@@ -14,53 +19,55 @@
 
 .propos_block {
   position: relative;
-  background-color: $red; /* Красный фон для блока */
-  color: $white; /* Цвет текста белый */
+  background-color: $red;
+  color: $white;
   width: 82%;
   border-radius: 5px;
-  overflow: hidden; /* Скрывает содержимое за пределами блока */
+  overflow: hidden;
   transition: margin-bottom 0.3s ease;
+
+  @include tablet {
+    width: 100%;
+ }
 
   .content-container {
     position: relative;
-    background-color: $white; /* Белый фон для раскрывающегося содержимого */
-    max-height: 0; /* Начальная высота для скрытия содержимого */
-    overflow: hidden; /* Скрывает переполнение */
-    // transition: max-height 0.9s ease, opacity 0.9s ease, transform 0.9s ease;
+    background-color: $white;
+    max-height: 0;
+    overflow: hidden;
     transition: max-height 0.4s ease-in, opacity 0.4s ease-in, transform 0.4s ease-in;
     
     &.open {
-      max-height: 1000px; /* Достаточно большая высота для содержимого */
+      max-height: 1000px;
       transition: max-height 0.5s ease-out, opacity 0.5s ease-out, transform 0.5s ease-out;
     }
   }
 
+
   .content {
-    font-family: $font-main; /* Замените на ваш шрифт */
-    color: $dark; /* Цвет текста */
+    font-family: $font-main;
+    color: $dark;
     font-size: 22px;
-    padding: 10px; /* Отступы */
-    opacity: 0; /* Начальная непрозрачность */
-    transform: translateY(-20px); /* Начальное смещение вверх */
-    transition: transform 0.5s ease, opacity 0.5s ease; /* Анимации для свойств */
+    padding: 10px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
     
     &.visible {
-      opacity: 1; /* Текст становится видимым */
-      transform: translateY(0); /* Текст смещается на своё место */
+      opacity: 1;
+      transform: translateY(0);
     }
   }
-
-
-
+  
   .icon-container {
-    position: absolute; // Абсолютное позиционирование
-    top: 17px; // Отступ от верхнего края
-    right: 24px; // Отступ от правого края
+    position: absolute;
+    top: 17px;
+    right: 24px;
     cursor: pointer;
   
     .v-icon {
       height: 17px;
-      position: relative; // Позиционирование иконки относительно контейнера
+      position: relative;
       transition: transform 0.3s ease;
   
       &:before,
@@ -74,21 +81,18 @@
       }
   
       &:before {
-        // left: 14px;
         right: 8px;
-        transform: rotate(45deg); // Верхняя линия иконки
+        transform: rotate(45deg);
       }
   
       &:after {
-        // right: 1px;
         right: -3px;
-        transform: rotate(-45deg); // Нижняя линия иконки
+        transform: rotate(-45deg);
       }
     }
   
-    // Когда блок открыт
     &.open .v-icon {
-      transform: rotate(-180deg); // Поворот на 90 градусов против часовой стрелки
+      transform: rotate(-180deg);
     }
   }
 }  

@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    max-height: auto;
 }
 
 .footer svg {
@@ -14,4 +15,10 @@
 
 .footer_text {
  color: $white;
+
+ @include tablet {
+    text-align: center;
+    width: 130px;
+    margin: 0 auto;
+ }
 }

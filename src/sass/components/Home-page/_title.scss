@@ -14,9 +14,23 @@
     background-repeat: no-repeat;
     border-radius: 25px;
     box-shadow: 0px 4px 4px 0px #00000040;
+
+    @include laptop {
+    margin-top: -20px;
+      }
 }
 
 .title-chez-vous h1 {
     text-align: center;
     padding-top: 75px;
+
+    @include smalldevices {
+        padding: 80px 0 30px 20px;
+        width: 240px;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 24px;
+        text-align: left;
+
+    }
 }

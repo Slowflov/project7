@@ -3,14 +3,23 @@
     margin: 0 auto;
     padding: 0 15px;
     width: 100%;
+
+    @include laptop {
+      padding: 0 5px;
+      }
 }
 
 #logement {
     position: relative;
+    margin-bottom: 440px;
 }
 
 .carrousel-wrapper {
     padding: 0 50px;
+
+    @include devices {
+      padding: 0 20px;
+      }
 }
 
 .carrousel-container {
@@ -18,7 +27,11 @@
     width: 100%;
     max-width: 962px;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 20px 0 10px 0;
+
+    @include devices {
+      padding: 0;
+      }
 }
 
 .logement_carrousel {
@@ -26,6 +39,10 @@
     height: 400px;
     object-fit: cover;
     border-radius: 15px;
+
+    @include devices {
+      height: 255px;
+      }
 }
 
 // Основные стили для стрелок
@@ -58,19 +75,27 @@
 
 .logement-items {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+    flex-direction: column;
+    width: 75%;
+    margin-bottom: 10px;
+
+    @include devices {
+      width: 95%;
+      }
 }
 
 .logement-menu {
     margin-left: 55px;
-    margin-bottom: 246px;
+    margin-bottom: 50px;
+
+    @include devices {
+      margin-left: 20px;
+      margin-bottom: 27px;
+      }
 }
 
 .logement-items_title {
     color: $red;
-    margin-top: -45px;
 }
 
 .logement-items_text {
@@ -78,13 +103,24 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 25.67px;
-    margin-top: -45px;
+
+    @include devices {
+      padding-bottom: 10px;
+      }
 }
 
-.logement-other {
+.logement-tags {
     display: flex;
     gap: 0 10px;
     margin: 24px 0;
+
+    @include laptop {
+      margin: 25px 0 0;
+     }
+
+     @include tablet {
+      margin: 10px 0 0;
+     }
 }
 
 .logement-bg {
@@ -95,57 +131,12 @@
     text-align: center;
     font-size: 14px;
     font-weight: 700;
+
+    @include tablet {
+      padding: 3px 22px 2px 23px;
+      font-size: 10px;
+     }
 }
-
-.logement-bar_text {
-    color: $white;
-    font-family: $font-main;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 25.67px;
-
-    user-select: none;
-}
-
-.logement-bar {
-    position: relative;
-    background-color: $red;
-    width: 44%;
-    border-radius: 10px;
-    padding: 10px 0 10px 10px;
-}
-
-.icon-container-logement {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 20px;
-    padding-left: 5px;
-
-    user-select: none;
-}
-
-.logement-description-content,
-.equipments-description-content {
-    position: absolute;
-    max-width: 43%;
-    padding: 10px;
-    font-family: "Montserrat", sans-serif;
-    color: #000000;
-    font-size: 20px;
-    padding: 10px;
-
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-out;
-  
-    // Если блок открыт, добавляем анимацию и изменяем max-height
-    &.open {
-      max-height: 500px; // Установите значение, соответствующее высоте контента
-      transition: max-height 0.4s ease-out;
-      animation: slideDown 0.4s ease-out forwards;
-    }
-  }
 
   @keyframes slideDown {
     0% {
@@ -158,50 +149,20 @@
     }
   }
 
-
-  .equipements-list {
-    margin-top: 10px;
-  }
-
-  .equipements-list li {
-    margin-bottom: 4px;
-  }
-
-  .v-icon-logement {
-    position: absolute;
-    color: $white;
-    width: 33px;
-    height: 18px;
-    cursor: pointer;
-    top: 13px;
-    right: 9px;
-    transition: transform 0.4s ease-out; // Плавный переход для поворота
+  .slide-with-counter {
     display: flex;
-    align-items: center; // Центрирование по вертикали
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
   
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      width: 2px;
-      height: 97%;
-      background-color: $white; // Цвет для линий
-    }
-  
-    &:before {
-      left: 12px;
-      transform: rotate(45deg); // Верхняя линия
-    }
-  
-    &:after {
-      right: 8px;
-      transform: rotate(-45deg); // Нижняя линия
-    }
-  
-    // Анимация для поворота иконки
-    &.rotate {
-      transform: rotate(-180deg); // Поворот на 180 градусов
-    }
+  .carrousel-counter {
+    margin-top: 10px;
+    background-color: rgba(238, 5, 5, 0.609);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 14px;
   }
   
 
@@ -222,30 +183,80 @@
     font-weight: 500;
     line-height: 25.67px;
     text-align: right;
+
+    @include laptop {
+      font-size: 16px;
+      }
 }
 
 .logement-prenom {
     display: flex;
     align-items: center;
-    margin-top: 17px;
+    justify-content: flex-end;
+    margin-top: -80px;
     gap: 0 5px;
+
+    @include laptop {
+      position: relative;
+      top: 94px;
+      margin-bottom: 7px;
+     }
+
+     @include laptop {
+      position: relative;
+      top: 94px;
+      margin-bottom: 7px;
+     }
+}
+
+.logement-prenom_text {
+  width: 100px;
+  @include laptop {
+    width: 80px;
+    }
 }
 
 .logement-prenom img {
     margin-right: 60px;
+
+    @include laptop {
+      width: 50px;
+      margin-right: 42px;
+      }
 }
 
 .logement-rating {
-    position: relative;
     display: flex;
     gap: 10px;
-    top: 67px;
-    right: 13px;
+    padding: 0px 60px 3px 0;
+
+    @include laptop {
+      position: static;
+      display: flex;
+      margin: 30px 0 20px 0;
+     }
+}
+
+.logement-other {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include laptop {
+    display: flex;
+    flex-direction: column;
+    justify-content: initial;
+    align-items: initial; 
+   }
 }
 
 .icon-rating {
     color: $red;
     font-size: 21px;
+
+    @include laptop {
+     font-size: 16px;
+     }
 }
 
 .neutral-star {
@@ -255,16 +266,5 @@
 
     &:before {
         content: '\f005';
-        /* Unicode для звезды */
     }
-}
-
-.logement-bar-droite {
-    position: relative;
-    background-color: $red;
-    width: 211%;
-    border-radius: 10px;
-    padding: 10px 0 10px 10px;
-    right: 289px;
-    top: 96px;
 }

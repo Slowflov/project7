@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Propos from './pages/Propos';
 import Logement from './pages/Logement';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
           <Route index element={<Home />} />   {/* Главная страница */}
           <Route path="/Propos" element={<Propos />} /> {/* Вторая страница */}
           <Route path="/logement/:id" element={<Logement />} /> {/* Третья страница с параметром id */}
+          <Route path="*" element={<NotFoundPage />} /> {/* Маршрут для 404 страницы */}
+          <Route path="*" element={<NotFoundPage />} /> {/* Обработка несуществующих маршрутов */}
         </Route>
       </Routes>
     </Router>

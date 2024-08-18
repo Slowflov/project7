@@ -1,5 +1,9 @@
 .header {
     padding: 30px 100px;
+
+    @include tablet {
+        padding: 30px 20px;
+    }
 }
 
 .header_inner {
@@ -9,11 +13,19 @@
 
 .header_img {
     width: 170px;
+
+    @include tablet {
+       width: 130px;
+    }
 }
 
 .header_list {
     display: flex;
     gap: 0 60px;
+
+    @include tablet {
+        gap: 0 30px;
+    }
 }
 
 .header_link {
@@ -22,6 +34,10 @@
     font-size: 24px;
     font-weight: 500;
     line-height: 34.22px;
+
+    @include tablet {
+      font-size: 18px;
+    }
 
     &:active,
     &:focus {

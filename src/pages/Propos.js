@@ -1,6 +1,6 @@
 // src/pages/Propos.js
 import React, { useState } from 'react';
-import '../styles/main.css'; // Подключите ваш CSS файл
+import '../styles/main.css';
 
 const Propos = () => {
   const [activeIndex, setActiveIndex] = useState(null);

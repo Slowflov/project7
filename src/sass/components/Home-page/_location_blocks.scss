@@ -10,11 +10,27 @@
   background-color: $bg-white-gray;
   padding: 45px 30px;
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 50px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  gap: 50px;
   width: 100%;
+
+  @include laptop {
+    gap: 30px;
+    padding: 25px 5px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include devices {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    background-color: transparent;
+    grid-template-columns: 1fr;
+    gap:20px 0;
+  }
 }
 
 .location-inner {
@@ -30,30 +46,42 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  width: 340px;
+  width: 100%;
   height: 340px;
   border-radius: 25px;
   background-color: $red;
-  transition: box-shadow 0.3s ease, border 0.3s ease; // Плавный переход для тени и рамки
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+
+  @include laptop {
+    height: 255px;
+  }
 
   &:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     border: 4px solid rgba(255, 255, 255, 0.7);
 
     .location_text {
-      transform: scale(1.1); // Увеличиваем текст при наведении
-      font-size: 1.0.8em; // Увеличиваем размер шрифта
+      transform: scale(1.1);
+      font-size: 1.08em;
     }
   }
+}
+
+.location_block:nth-last-child(2) {
+  grid-column: 1;
+}
+
+.location_block:nth-last-child(1) {
+  grid-column: 2;
 }
 
 .location_text {
   color: $white; 
   padding: 0 20px 20px 20px;
   position: absolute;
-  bottom: 0; // Прикрепляем текст к нижнему краю блока
-  left: 0; // Прикрепляем текст к левому краю блока
-  width: 100%; // Ширина текста равна ширине блока
+  bottom: 0;
+  left: 0;
+  width: 100%;
   transition: transform 0.3s ease, font-size 0.3s ease;
 }
 
@@ -63,3 +91,5 @@
   border-radius: 10px;
   object-fit: cover;
 }
+
+

@@ -1,5 +1,9 @@
 .propos {
     padding: 0 100px;
+
+    @include tablet {
+        padding: 0 20px;
+    }
 }
 
 .propos_img {

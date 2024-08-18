@@ -15,9 +15,10 @@
     width: 100%;
 }
 
-.error_text {
+.error_link {
     display: inline-block;
     border-bottom: 1px solid black;
+    color: $dark;
     font-size: 18px;
     font-weight: 500;
     line-height: 25.67px;

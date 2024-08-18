@@ -11,7 +11,6 @@ function Header() {
         <img className="header_img" src={logo} alt="LOGO" />
         <ul className="header_list">
           <li className="header_item">
-            {/* Используйте Link вместо обычной ссылки */}
             <Link className="header_link" to="/">Accueil</Link>
           </li>
           <li className="header_item">
