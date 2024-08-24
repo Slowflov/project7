@@ -13,11 +13,20 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />   {/* Главная страница */}
-          <Route path="/Propos" element={<Propos />} /> {/* Вторая страница */}
-          <Route path="/logement/:id" element={<Logement />} /> {/* Третья страница с параметром id */}
-          <Route path="*" element={<NotFoundPage />} /> {/* Маршрут для 404 страницы */}
-          <Route path="*" element={<NotFoundPage />} /> {/* Обработка несуществующих маршрутов */}
+          {/* Route pour la page d'accueil */}
+          <Route index element={<Home />} />
+          
+          {/* Route pour la deuxième page */}
+          <Route path="/Propos" element={<Propos />} />
+          
+          {/* Route pour la troisième page avec un paramètre id */}
+          <Route path="/logement/:id" element={<Logement />} />
+          
+          {/* Route pour la page 404 */}
+          <Route path="*" element={<NotFoundPage />} />
+
+          {/* Gestion des routes non existantes */}
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </Router>
@@ -27,12 +36,12 @@ function App() {
 const Layout = () => {
   const location = useLocation();
 
-  // Проверяем, если текущий путь начинается с /logement (с маленькой буквы)
+  // Vérifie si le chemin actuel commence par /logement (en minuscules)
   const isLogement = location.pathname.toLowerCase().startsWith('/logement');
 
   return (
     <div>
-      {/* Отображаем общий Header, только если это не Logement */}
+      {/* Affiche le Header commun seulement si ce n'est pas la page Logement */}
       {!isLogement && <Header />}
       <Outlet />
       <Footer />
@@ -41,6 +50,7 @@ const Layout = () => {
 };
 
 export default App;
+
 
 
 
