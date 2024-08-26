@@ -157,12 +157,15 @@
   }
   
   .carrousel-counter {
-    margin-top: 10px;
-    background-color: rgba(238, 5, 5, 0.609);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 10px;
-    font-size: 14px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    padding: 25px 10px;
+    height: 32px;
+
+    font-size: 25px;
   }
   
 

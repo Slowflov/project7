@@ -1,20 +1,20 @@
 .propos-menu {
-   display: flex;
-   justify-content: center;
-   flex-direction: column;
-   align-items: center;
-   padding: 38px 0;
-   gap: 30px 0;
-   margin-bottom: 539px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 38px 0;
+  gap: 30px 0;
+  margin-bottom: 539px;
 
-   @include tablet {
-    padding: 20px 0;
-    gap: 20px 0;
- }
+  @include tablet {
+   padding: 20px 0;
+   gap: 20px 0;
+  }
 }
 
 .propos_block h5 {
-    padding: 10px 0 8px 15px;
+  padding: 10px 0 8px 15px;
 }
 
 .propos_block {
@@ -28,21 +28,20 @@
 
   @include tablet {
     width: 100%;
- }
+  }
 
   .content-container {
     position: relative;
-    background-color: $white;
+    background-color: hsl(0, 11%, 98%);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-in, opacity 0.4s ease-in, transform 0.4s ease-in;
     
     &.open {
-      max-height: 1000px;
+      max-height: 1000px; // adjust this value based on the content's height
       transition: max-height 0.5s ease-out, opacity 0.5s ease-out, transform 0.5s ease-out;
     }
   }
-
 
   .content {
     font-family: $font-main;
@@ -64,12 +63,12 @@
     top: 17px;
     right: 24px;
     cursor: pointer;
-  
+
     .v-icon {
       height: 17px;
       position: relative;
       transition: transform 0.3s ease;
-  
+
       &:before,
       &:after {
         content: '';
@@ -79,27 +78,23 @@
         background-color: $white;
         top: 0;
       }
-  
+
       &:before {
         right: 8px;
         transform: rotate(45deg);
       }
-  
+
       &:after {
         right: -3px;
         transform: rotate(-45deg);
       }
     }
-  
+
     &.open .v-icon {
       transform: rotate(-180deg);
     }
   }
-}  
-
-
-
-
+}
 
 
 
