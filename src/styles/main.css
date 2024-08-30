@@ -168,7 +168,7 @@ aside, nav, footer, header, section, main {
 @media screen and (max-width: 485px) {
   .title-chez-vous h1 {
     padding: 80px 0 30px 20px;
-    width: 240px;
+    width: 265px;
     font-size: 28px;
     font-weight: 700;
     line-height: 24px;

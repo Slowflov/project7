@@ -4,20 +4,24 @@
 @import '../utilities/mixin';
 @import '../utilities/reset';
 
+// header
+@import '../../components/Header/header';
+
 //block main page
-@import '../components/Home-page/header';
-@import '../components/Home-page/title';
-@import '../components/Home-page/location_blocks';
-@import '../components/Home-page/footer';
+@import '../../pages/Home/title';
+@import '../../pages/Home/location_blocks';
 
 //block propos
-@import '../components/Propos/bg_img';
-@import '../components/Propos/menu';
+@import '../../pages/Propos/bg_img';
+@import '../../pages/Propos/menu';
 
 //block error
-@import '../components/E404/error';
+@import '../../pages/NotFoundPage/error';
 
 //block fishe-logement
-@import '../components/Fishe-Logement/fishe-logement';
-@import '../components/Fishe-Logement/header-logement';
-@import '../components/Fishe-Logement/Logement-bars';
+@import '../../pages/Logement/fishe-logement';
+@import '../../pages/Logement/header-logement';
+@import '../../pages/Logement/Logement-bars';
+
+// footer
+@import '../../components/Footer/footer;

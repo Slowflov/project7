@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom'; // Importer useNavigate pour la navigation
-import '../styles/main.css';
+import '../../styles/main.css';
 import { Link } from 'react-router-dom';
-import logo from '../assets/image/LOGO.png';
-import ArrowLeft from '../assets/image/arrow_left.png';
-import ArrowRight from '../assets/image/arrow_right.png';
-import Rond from '../assets/image/rond.png';
+import logo from '../../assets/image/LOGO.png';
+import ArrowLeft from '../../assets/image/arrow_left.png';
+import ArrowRight from '../../assets/image/arrow_right.png';
+import Rond from '../../assets/image/rond.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons';

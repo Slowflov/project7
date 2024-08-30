@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation, Outlet } from 'react-router-dom';
 import './styles/main.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import Propos from './pages/Propos';
-import Logement from './pages/Logement';
-import NotFoundPage from './pages/NotFoundPage';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Home from './pages/Home/Home';
+import Propos from './pages/Propos/Propos';
+import Logement from './pages/Logement/Logement';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
 function App() {
   return (

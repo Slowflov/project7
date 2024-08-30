@@ -1,6 +1,6 @@
 // src/components/Footer.js
 import React from 'react';
-import '../styles/main.css';  // Путь к CSS
+import '../../styles/main.css';
 
 function Footer() {
   return (

@@ -1,7 +1,7 @@
 // src/pages/Home.js
 import React from 'react';
-import AccommodationList from '../components/AccommodationList';
-import '../styles/main.css';
+import AccommodationList from '../../components/AccommodationList/AccommodationList';
+import '../../styles/main.css';
 
 function Home() {
   return (

@@ -1,8 +1,8 @@
 // src/components/NotFoundPage.js
 import React from 'react';
-import '../styles/main.css';
+import '../../styles/main.css';
 import { Link } from 'react-router-dom';
-import notFoundImage from '../assets/image/404.png';
+import notFoundImage from '../../assets/image/404.png';
 const NotFoundPage = () => {
   return (
     <main>
