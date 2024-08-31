@@ -1,0 +1,77 @@
+.propos_block {
+    position: relative;
+    background-color: $red;
+    color: $white;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: margin-bottom 0.3s ease;
+  
+    @include tablet {
+      width: 100%;
+    }
+  
+    .content-container {
+      position: relative;
+      background-color: hsl(0, 11%, 98%);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-in, opacity 0.4s ease-in, transform 0.4s ease-in;
+      
+      &.open {
+        max-height: 1000px; // adjust this value based on the content's height
+        transition: max-height 0.5s ease-out, opacity 0.5s ease-out, transform 0.5s ease-out;
+      }
+    }
+  
+    .content {
+      font-family: $font-main;
+      color: $dark;
+      font-size: 22px;
+      padding: 10px;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      
+      &.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .icon-container {
+      position: absolute;
+      top: 17px;
+      right: 24px;
+      cursor: pointer;
+  
+      .v-icon {
+        height: 17px;
+        position: relative;
+        transition: transform 0.3s ease;
+  
+        &:before,
+        &:after {
+          content: '';
+          position: absolute;
+          width: 2px;
+          height: 100%;
+          background-color: $white;
+          top: 0;
+        }
+  
+        &:before {
+          right: 8px;
+          transform: rotate(45deg);
+        }
+  
+        &:after {
+          right: -3px;
+          transform: rotate(-45deg);
+        }
+      }
+  
+      &.open .v-icon {
+        transform: rotate(-180deg);
+      }
+    }
+  }

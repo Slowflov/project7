@@ -112,8 +112,8 @@ const Logement = () => {
               ))}
             </div>
           </div>
-          <div class="container-logement-bars">
-  <div class="logement-bar-left">
+          <div className="container-logement-bars">
+  <div className="logement-bar-left">
     <Collapse
       title="Description"
       content={description}
@@ -121,7 +121,7 @@ const Logement = () => {
     />
   </div>
 
-  <div class="logement-bar-right">
+  <div className="logement-bar-right">
     <Collapse
       title="Équipements"
       content={equipments}

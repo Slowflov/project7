@@ -132,7 +132,7 @@ aside, nav, footer, header, section, main {
 }
 
 .Titre-de-la-location {
-  padding: 0 20px;
+  padding: 0 80px;
   margin: 0 auto;
 }
 
@@ -305,74 +305,6 @@ aside, nav, footer, header, section, main {
 
 .propos_block h5 {
   padding: 10px 0 8px 15px;
-}
-
-.propos_block {
-  position: relative;
-  background-color: #FF6060;
-  color: #FFFFFF;
-  border-radius: 5px;
-  overflow: hidden;
-  transition: margin-bottom 0.3s ease;
-}
-@media screen and (max-width: 768px) {
-  .propos_block {
-    width: 100%;
-  }
-}
-.propos_block .content-container {
-  position: relative;
-  background-color: hsl(0, 11%, 98%);
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease-in, opacity 0.4s ease-in, transform 0.4s ease-in;
-}
-.propos_block .content-container.open {
-  max-height: 1000px;
-  transition: max-height 0.5s ease-out, opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-.propos_block .content {
-  font-family: "Montserrat", sans-serif;
-  color: #000000;
-  font-size: 22px;
-  padding: 10px;
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
-.propos_block .content.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.propos_block .icon-container {
-  position: absolute;
-  top: 17px;
-  right: 24px;
-  cursor: pointer;
-}
-.propos_block .icon-container .v-icon {
-  height: 17px;
-  position: relative;
-  transition: transform 0.3s ease;
-}
-.propos_block .icon-container .v-icon:before, .propos_block .icon-container .v-icon:after {
-  content: "";
-  position: absolute;
-  width: 2px;
-  height: 100%;
-  background-color: #FFFFFF;
-  top: 0;
-}
-.propos_block .icon-container .v-icon:before {
-  right: 8px;
-  transform: rotate(45deg);
-}
-.propos_block .icon-container .v-icon:after {
-  right: -3px;
-  transform: rotate(-45deg);
-}
-.propos_block .icon-container.open .v-icon {
-  transform: rotate(-180deg);
 }
 
 .error {
@@ -755,6 +687,74 @@ aside, nav, footer, header, section, main {
 
 .equipements-list li {
   margin-bottom: 4px;
+}
+
+.propos_block {
+  position: relative;
+  background-color: #FF6060;
+  color: #FFFFFF;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: margin-bottom 0.3s ease;
+}
+@media screen and (max-width: 768px) {
+  .propos_block {
+    width: 100%;
+  }
+}
+.propos_block .content-container {
+  position: relative;
+  background-color: hsl(0, 11%, 98%);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in, opacity 0.4s ease-in, transform 0.4s ease-in;
+}
+.propos_block .content-container.open {
+  max-height: 1000px;
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.propos_block .content {
+  font-family: "Montserrat", sans-serif;
+  color: #000000;
+  font-size: 22px;
+  padding: 10px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.propos_block .content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.propos_block .icon-container {
+  position: absolute;
+  top: 17px;
+  right: 24px;
+  cursor: pointer;
+}
+.propos_block .icon-container .v-icon {
+  height: 17px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.propos_block .icon-container .v-icon:before, .propos_block .icon-container .v-icon:after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: #FFFFFF;
+  top: 0;
+}
+.propos_block .icon-container .v-icon:before {
+  right: 8px;
+  transform: rotate(45deg);
+}
+.propos_block .icon-container .v-icon:after {
+  right: -3px;
+  transform: rotate(-45deg);
+}
+.propos_block .icon-container.open .v-icon {
+  transform: rotate(-180deg);
 }
 
 .footer {
