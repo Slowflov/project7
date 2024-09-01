@@ -26,7 +26,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
 
           {/* Gestion des routes non existantes */}
-          <Route path="*" element={<NotFoundPage />} />
+          {/* <Route path="*" element={<NotFoundPage />} /> */}
         </Route>
       </Routes>
     </Router>

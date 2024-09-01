@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'; 
 import { useNavigate } from 'react-router-dom'; 
-import Gallery from '../Gallery/Gallery'; // Исправленный путь импорта
+import Gallery from '../Gallery/Gallery';
 
 const AccommodationList = () => {
   const [accommodations, setAccommodations] = useState([]); 

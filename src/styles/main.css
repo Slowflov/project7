@@ -135,6 +135,11 @@ aside, nav, footer, header, section, main {
   padding: 0 80px;
   margin: 0 auto;
 }
+@media screen and (max-width: 768px) {
+  .Titre-de-la-location {
+    padding: 0 15px;
+  }
+}
 
 .title-chez-vous {
   width: 100%;
@@ -149,6 +154,12 @@ aside, nav, footer, header, section, main {
   margin-bottom: 43px;
 }
 @media screen and (max-width: 1024px) {
+  .title-chez-vous {
+    margin-top: -20px;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
   .title-chez-vous {
     margin-top: -20px;
     margin-bottom: 20px;
