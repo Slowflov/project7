@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/project7/static/css/main.1ab75c13.css",
+    "main.js": "/project7/static/js/main.b5ef6ffb.js",
+    "static/media/Section_propos.jpg": "/project7/static/media/Section_propos.ee934375a9ae72069b26.jpg",
+    "static/media/header_img2.jpg": "/project7/static/media/header_img2.6780cd799b89f4797433.jpg",
+    "index.html": "/project7/index.html",
+    "main.1ab75c13.css.map": "/project7/static/css/main.1ab75c13.css.map",
+    "main.b5ef6ffb.js.map": "/project7/static/js/main.b5ef6ffb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1ab75c13.css",
+    "static/js/main.b5ef6ffb.js"
+  ]
+}
