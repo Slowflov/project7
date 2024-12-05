@@ -7,9 +7,13 @@ const AccommodationList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('https://Slowflov.github.io/project7/data.json')
-
-      .then(response => response.json())
+    fetch(process.env.PUBLIC_URL + '/data.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
       .then(data => setAccommodations(data))
       .catch(error => console.error('Error fetching data:', error));
   }, []);

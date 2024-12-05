@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation, Outlet } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes, useLocation, Outlet } from 'react-router-dom';  // Изменено на HashRouter
 import './styles/main.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -24,9 +24,6 @@ function App() {
           
           {/* Route pour la page 404 */}
           <Route path="*" element={<NotFoundPage />} />
-
-          {/* Gestion des routes non existantes */}
-          {/* <Route path="*" element={<NotFoundPage />} /> */}
         </Route>
       </Routes>
     </Router>
@@ -50,6 +47,7 @@ const Layout = () => {
 };
 
 export default App;
+
 
 
 

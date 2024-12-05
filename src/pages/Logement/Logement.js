@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../../styles/main.css';
 import { Link } from 'react-router-dom';
@@ -17,22 +17,21 @@ const Logement = () => {
   const [logementData, setLogementData] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  useEffect(() => {
-    fetch('/data.json')
-      .then(response => response.json())
-      .then(data => {
-        const logement = data.find(item => item.id === id);
-        if (logement) {
-          setLogementData(logement);
-        } else {
-          navigate('/404', { replace: true });
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-        navigate('/404', { replace: true });
-      });
-  }, [id, navigate]);
+  fetch(`${process.env.PUBLIC_URL}/data.json`)
+  .then(response => response.json())
+  .then(data => {
+    const logement = data.find(item => item.id === id);
+    if (logement) {
+      setLogementData(logement);
+    } else {
+      navigate('/404', { replace: true });
+    }
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+    navigate('/404', { replace: true });
+  });
+
 
   if (!logementData) {
     return <div>Loading...</div>;
