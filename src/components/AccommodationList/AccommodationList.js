@@ -7,7 +7,8 @@ const AccommodationList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('/data.json')
+    fetch('https://Slowflov.github.io/project7/data.json')
+
       .then(response => response.json())
       .then(data => setAccommodations(data))
       .catch(error => console.error('Error fetching data:', error));
